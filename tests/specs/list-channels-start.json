@@ -1,19 +1,20 @@
 [
   {
-    "name": "Share my channels",
+    "name": "Share my channels button opens the flow",
     "steps": [
       {
+        "send": { "callback": "list_channels:start" },
         "expect": [
+          {
+            "method": "answerCallbackQuery"
+          },
           {
             "method": "sendMessage",
             "payload": {
-              "text": "Initiate channel list request flow via button"
+              "text": "I'll gather links to all the channels you manage and send them here.\n\nTap below to continue."
             }
           }
-        ],
-        "send": {
-          "callback": "list_channels:start"
-        }
+        ]
       }
     ]
   }

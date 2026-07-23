@@ -1,19 +1,17 @@
 [
   {
-    "name": "/list_channels",
+    "name": "/list_channels shows the flow prompt",
     "steps": [
       {
+        "send": { "text": "/list_channels" },
         "expect": [
           {
             "method": "sendMessage",
             "payload": {
-              "text": "Initiate channel list request flow"
+              "text": "I'll gather links to all the channels you manage and send them here.\n\nTap below to continue."
             }
           }
-        ],
-        "send": {
-          "text": "/list_channels"
-        }
+        ]
       }
     ]
   }
